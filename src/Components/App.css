@@ -1,46 +1,64 @@
+:root {
+  --bg-primary: #fffffe;
+
+  --fg-primary: #eff0f3;
+  --fg-secondary: #2a2a2a;
+  --fg-tertiary: #494949;
+
+  --txt-primary: #020826;
+
+  --button-primary: #494949;
+
+  --button-enabled: #2278CF;
+  --button-disabled: #B6B6B6;
+
+  --button-text-primary: #fffffe;
+}
+
 * {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Rubik', sans-serif;
+
 }
 
 h1 {
   padding: 0.7em 0;
-  color:#F7D9B2;
+  color: var(--txt-primary);
   text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 1rem;
 }
 
 body {
-  background-color: #F7D9B2;
+  background-color: var(--bg-primary);
 }
 
-.frame {
-  width:100%;
-  background-color: #4e7783;
-}
-
-.bars-window{
+.bars-window {
+  display: flex;
   height: 300px;
 }
 
-.bars-container {
-  background-color:#4e7783;
-  position: relative;
+.main-content-container {
+  background-color: var(--fg-primary);
   z-index: 0;
   padding: 1rem;
+  margin: 1rem;
 }
 
 .bars {
-  display:inline-block;
-  z-index: 10;
-  background-color: #F7D9B2;
-
+  z-index: 1;
+  background-color: var(--fg-secondary);
 }
 
 .button-container {
-  width:inherit;
-  text-align: center;
-  display:grid;
-  grid-template-columns: repeat(3, 20%);
+  display: flex;
   grid-gap: 4%;
   padding: 1rem 0;
   justify-content: center;
@@ -48,19 +66,116 @@ body {
 
 .button-style {
   border-radius: 10px;
-  background-color: #F0F0F0;
-  border: #F0F0F0;
-  transition: 0.3s
+  width: 140px;
+  height: 30px;
+  color: var(--button-text-primary);
+  background-color: var(--button-primary);
+  border: none;
 }
 
-.button-style:hover{
-  background-color: #c0c0c0;
-  border: #c0c0c0;
-  transition: 0.3s
+.button-style:hover {
+  background-color: var(--button-disabled);
+  color: var(--txt-primary);
 }
 
+.hoverable-div {
+  padding: 2rem;
+  margin: 1rem;
+  text-align: center;
+  grid-area: detail;
+  background-color: var(--fg-primary);
+  border-radius: 5px;
+  filter: opacity(1);
+  max-width: 100%;
+}
 
-/* Copyright (c) 2014, Indian Type Foundry (info@indiantypefoundry.com).
+@keyframes fade-in {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+.flex-display {
+  display: flex;
+}
+
+.slider-layout {
+  display: grid;
+  gap: 10px;
+  width:100%;
+  grid-template-columns: 10% auto 10%;
+  grid-template-areas:
+    'header header header'
+    'label1 slider label2';
+}
+
+h2 {
+  grid-area: header;
+  text-align: center;
+}
+
+.slider-layout p {
+  grid-area: label1;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.slider-layout p:last-child {
+  grid-area: label2;
+  justify-content: left;
+}
+
+.slider {
+  grid-area: slider;
+
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 18px;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 13px;
+  cursor: pointer;
+  background: var(--fg-tertiary);
+  border-radius: 18px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 50px;
+  width: 20px;
+  border-radius: 11px;
+  background: var(--button-enabled);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -18.5px;
+  transition: 0.1s;
+}
+
+input[type=range]:disabled::-webkit-slider-thumb {
+  transition: 0.2s;
+}
+
+/* 
+Copyright (c) 2015 by Hubert & Fischer. All rights reserved.
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at: http://scripts.sil.org/OFL
@@ -102,4 +217,5 @@ TERMINATION
 This license becomes null and void if any of the above conditions are not met.
 
 DISCLAIMER
-THE FONT SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE. */
+THE FONT SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE. 
+*/

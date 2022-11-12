@@ -1,0 +1,10 @@
+{
+    "bubble-sort": {
+        "header": "Bubble Sort O(n²)",
+        "description": "Bubble Sort is a sorting algorithm of O(n²) time complexity, due to this, it is one of the least efficient sorting algorithms. It compares every element in an array with the next element and swaps if the current element is greater than the next element until the end. After the first iteration, the greatest element is sorted on the very right. This repeats until n number of loops where all values would be sorted in ascending order"
+    },
+    "selection-sort":{
+        "header": "Selection Sort O(n²)",
+        "description": "Bubble Sort is a sorting algorithm of O(n²) time complexity, due to this, it is one of the least efficient sorting algorithms. It compares every element with the currently smallest element (first initialized as the ith index where i indicates the number of loops) until the last index. The element with the smallest element is swapped with the ith element. At the end of the first loop, the smallest element is sorted in the first index. This repeats for n number of loops, each time increasing the starting point (i) and finally sorting the array."
+    }
+}
