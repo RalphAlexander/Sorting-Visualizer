@@ -169,6 +169,13 @@ input[type=range]:disabled::-webkit-slider-thumb {
   transition: 0.2s;
 }
 
+@media (max-width: 800px) {
+  .flex-display{
+    flex-direction: column;
+    gap: 0.7rem 0;
+  }
+}
+
 /* 
 Copyright (c) 2015 by Hubert & Fischer. All rights reserved.
 
